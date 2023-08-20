@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Tag;
 
 class ArticleController extends Controller
 {
@@ -96,5 +97,11 @@ class ArticleController extends Controller
     {
         $article->delete();
         return redirect()->route('articles.index');
+    }
+
+    public function addTag(Article $article) {
+        $tags = Tag::all();
+        return view('article.addtagform', ['article' => $article, 'tags' => $tags]);
+
     }
 }
