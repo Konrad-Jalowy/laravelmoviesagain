@@ -65,7 +65,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        return "not implemented";
+        return view('tag.editform', ['tag' => $tag]);
     }
 
     /**
