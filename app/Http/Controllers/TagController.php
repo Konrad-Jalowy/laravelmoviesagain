@@ -24,7 +24,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('tag.createform');
     }
 
     /**
