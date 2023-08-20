@@ -54,7 +54,8 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return "not implemented";
+        $role->load('users');
+        return view('role.showone', ['role' => $role]);
     }
 
     /**

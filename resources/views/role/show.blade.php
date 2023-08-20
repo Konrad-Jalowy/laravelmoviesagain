@@ -12,7 +12,7 @@
     </div>
     <ul>
     @forelse ($roles as $role )
-        <li><strong>{{$role->name}}</strong> <small>Number of users: {{$role->users_count}}</small> <a href="{{route('roles.edit', $role->id)}}">Edit</a> <a href="{{route('addusertorole', $role->id)}}">Add User</a><form action="{{route('roles.destroy', $role->id)}}" method="POST">
+        <li><strong> <a href="{{route('roles.show', $role->id)}}">{{$role->name}}</a></strong> <small>Number of users: {{$role->users_count}}</small> <a href="{{route('roles.edit', $role->id)}}">Edit</a> <a href="{{route('addusertorole', $role->id)}}">Add User</a><form action="{{route('roles.destroy', $role->id)}}" method="POST">
             @csrf
             @method('DELETE')
             <input type="submit" value="Delete">
