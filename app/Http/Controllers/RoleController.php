@@ -101,4 +101,14 @@ class RoleController extends Controller
         $users = User::all();
         return view('role.adduserform', ['role' => $role, 'users' => $users]);
     }
+
+    public function joinUser(Request $request, Role $role) {
+        $validated = $request->validate([
+            'user' => 'required',
+        ]);
+        $user = User::find($validated['user']);
+        $role->users()->syncWithoutDetaching([$user->id]);
+        return redirect()->route('roles.index');
+    }
+
 }

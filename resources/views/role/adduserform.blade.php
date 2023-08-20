@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <form action="{{route('roles.update', $role->id)}}" method="POST">
+          <form action="{{route('joinuser', $role->id)}}" method="POST">
             @csrf
             <p>Role: {{$role->name}}</p>
             <select name="user" id="user">
