@@ -21,4 +21,8 @@ class Article extends Model
     public function answers() {
         return $this->hasMany(Answer::class);
     }
+
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
+    }
 }
