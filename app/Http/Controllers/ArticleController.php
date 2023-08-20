@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,7 +15,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $articles = Article::all();
+        return view('article.showall', compact('articles'));
     }
 
     /**
@@ -35,7 +37,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        return "not implemented";
+        $user = Auth::user();
+        $article = new Article();
+        $article->user_id = $user->id;
+        $article->title = $request['title'];
+        $article->lead = $request['lead'];
+        $article->content = $request['content'];
+        $article->save();
+        return redirect()->route('articles.index');
     }
 
     /**
