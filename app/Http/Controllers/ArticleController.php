@@ -104,4 +104,8 @@ class ArticleController extends Controller
         return view('article.addtagform', ['article' => $article, 'tags' => $tags]);
 
     }
+
+    public function joinTag(Request $request, Article $article) {
+        return "not implemented";
+    }
 }
