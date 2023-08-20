@@ -5,7 +5,7 @@
     <p>Tags:</p>
     <ul>
     @forelse ($tags as $tag )
-       <li><strong>{{$tag->name}}</strong></li>
+       <li><a href="{{route('tags.show', $tag->id)}}"><strong>{{$tag->name}}</strong></a></li>
     @empty
         <li>No tags yet!</li>
     @endforelse
