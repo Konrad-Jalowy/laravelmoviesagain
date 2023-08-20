@@ -14,7 +14,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $roles = Role::all();
+        return view('role.show', compact('roles'));
     }
 
     /**
@@ -24,7 +25,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('role.createform');
     }
 
     /**
@@ -35,7 +36,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:roles|max:255',
+        ]);
+        $newRole = new Role();
+        $newRole->name = $validated['name'];
+        $newRole->save();
+        return redirect()->route('roles.index');
     }
 
     /**
