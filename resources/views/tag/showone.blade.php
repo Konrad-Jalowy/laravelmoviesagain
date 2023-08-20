@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <p>Articles:</p>
+    <p>Tag: {{$tag->name}}</p>
     <ul>
-    @forelse ($articles as $article )
-       <li><a href="{{route('articles.show', $article->id)}}"><strong>{{$article->title}}</strong></a></li>
+    @forelse ($tag->articles as $article )
+       <li><strong>{{$article->name}}</strong></li>
     @empty
         <li>No articles yet!</li>
     @endforelse

@@ -53,7 +53,8 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        return "not implemented";
+        $tag->load('articles');
+        return view('tag.showone', compact('tag'));
     }
 
     /**
