@@ -14,7 +14,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -24,7 +24,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -35,7 +35,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -46,7 +46,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -57,7 +57,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -69,7 +69,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -80,6 +80,6 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        return "not implemented";
     }
 }
