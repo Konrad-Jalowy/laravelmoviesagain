@@ -12,7 +12,7 @@
     </div>
     <ul>
     @forelse ($roles as $role )
-        <li><strong>{{$role->name}}</strong> <small>Number of users: {{$role->users_count}}</small></li>
+        <li><strong>{{$role->name}}</strong> <small>Number of users: {{$role->users_count}}</small> <a href="{{route('roles.edit', $role->id)}}">Edit</a></li>
     @empty
         <li>No roles yet!</li>
     @endforelse

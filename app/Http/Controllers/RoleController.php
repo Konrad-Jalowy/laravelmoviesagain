@@ -64,7 +64,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return "not implemented";
+        return view('role.editform', ['role' => $role]);
     }
 
     /**
@@ -76,7 +76,12 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:roles|max:255',
+        ]);
+        $role->name = $validated['name'];
+        $role->save();
+        return redirect()->route('roles.index');
     }
 
     /**
