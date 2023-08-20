@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -94,5 +95,10 @@ class RoleController extends Controller
     {
         $role->delete();
         return redirect()->route('roles.index');
+    }
+
+    public function addUserToRole(Role $role) {
+        $users = User::all();
+        return view('role.adduserform', ['role' => $role, 'users' => $users]);
     }
 }
