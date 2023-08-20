@@ -77,7 +77,13 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:tags|max:255',
+        ]);
+      
+        $tag->name = $validated['name'];
+        $tag->save();
+        return redirect()->route('tags.index');
     }
 
     /**
