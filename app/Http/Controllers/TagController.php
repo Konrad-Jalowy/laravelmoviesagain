@@ -88,6 +88,7 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        return "not implemented";
+        $tag->delete();
+        return redirect()->route('tags.index');
     }
 }
