@@ -79,7 +79,11 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        return "not implemented";
+        $article->title = $request['title'];
+        $article->lead = $request['lead'];
+        $article->content = $request['content'];
+        $article->save();
+        return redirect()->route('articles.index');
     }
 
     /**
