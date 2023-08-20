@@ -12,7 +12,7 @@
     </div>
     <ul>
     @forelse ($roles as $role )
-        <li>{{$role->name}}</li>
+        <li><strong>{{$role->name}}</strong> <small>Number of users: {{$role->users_count}}</small></li>
     @empty
         <li>No roles yet!</li>
     @endforelse
