@@ -67,7 +67,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return "not implemented";
+        return view('article.editform', ['article' => $article]);
     }
 
     /**
