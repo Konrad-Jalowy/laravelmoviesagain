@@ -14,7 +14,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $tags = Tag::all();
+        return view('tag.showall', compact('tags'));
     }
 
     /**
@@ -35,7 +36,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:tags|max:255',
+        ]);
+        $newTag = new Tag();
+        $newTag->name = $validated['name'];
+        $newTag->save();
+        return redirect()->route('tags.index');
     }
 
     /**
