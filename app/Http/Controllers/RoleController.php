@@ -92,6 +92,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        return "not implemented";
+        $role->delete();
+        return redirect()->route('roles.index');
     }
 }
