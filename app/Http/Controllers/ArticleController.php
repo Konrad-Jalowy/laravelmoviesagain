@@ -55,7 +55,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return "not implemented";
+        $article->load('user');
+        return view('article.showone', compact('article'));
     }
 
     /**
