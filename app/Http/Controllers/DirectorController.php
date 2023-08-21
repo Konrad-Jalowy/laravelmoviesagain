@@ -25,7 +25,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('director.createform');
     }
 
     /**
@@ -36,7 +36,17 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:directors|max:255',
+            'bio' => 'required',
+            'date_of_birth' => 'required'
+        ]);
+        $newDirector = new Director();
+        $newDirector->name = $validated['name'];
+        $newDirector->bio = $validated['bio'];
+        $newDirector->date_of_birth = $validated['date_of_birth'];
+        $newDirector->save();
+        return redirect()->route('directors.index');
     }
 
     /**
