@@ -17,7 +17,9 @@ class DirectorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+            'date_of_birth' => fake()->date(),
+            'bio' => fake()->text(),
         ];
     }
 }
