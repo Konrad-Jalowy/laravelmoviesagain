@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('category.createform');
     }
 
     /**
@@ -36,7 +36,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:categories|max:255',
+        ]);
+        $newCategory = new Category();
+        $newCategory->name = $validated['name'];
+        $newCategory->save();
+        return redirect()->route('categories.index');
     }
 
     /**
