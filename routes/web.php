@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('roles', RoleController::class);
 Route::resource('articles', ArticleController::class);
 Route::get('articles/{article}/addtag', [ArticleController::class, 'addTag'])->name('addtag');
+Route::post('articles/{article}/addtag', [ArticleController::class, 'joinTag'])->name('jointag');
 Route::resource('tags', TagController::class);
 Route::resource('categories', [CategoryController::class]);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');

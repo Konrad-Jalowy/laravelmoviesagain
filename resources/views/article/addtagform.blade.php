@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>{{$article->title}}</h1>
-          <form action="#" method="POST">
+          <form action="{{route('jointag', $article->id)}}" method="POST">
             @csrf
             <select name="tag" id="tag">
                 @foreach ( $tags as $tag )
