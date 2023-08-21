@@ -14,10 +14,11 @@ class CategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    public static $categories = array("Horror", "Action", "Comedy", "Sci-Fi", "Fantasy", "Documentary");
     public function definition()
     {
         return [
-            //
+            'name' => array_pop(self::$categories),
         ];
     }
 }
