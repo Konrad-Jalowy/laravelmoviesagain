@@ -53,7 +53,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return "not implemented";
+        $category->load('movies');
+        return view('category.showone', ['category' => $category]);
     }
 
     /**
