@@ -14,10 +14,11 @@ class RoleFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    public static $roles = array("Admins", "Moderators", "Writers", "Users" );
     public function definition()
     {
         return [
-            //
+            'name' => array_pop(self::$roles),
         ];
     }
 }
