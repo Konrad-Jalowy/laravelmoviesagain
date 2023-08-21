@@ -68,7 +68,7 @@ class DirectorController extends Controller
      */
     public function edit(Director $director)
     {
-        return "not implemented";
+        return view('director.editform', ['director' => $director]);
     }
 
     /**
