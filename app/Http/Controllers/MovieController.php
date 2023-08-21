@@ -14,7 +14,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $movies = Movie::all();
+        return view('movie.showall', compact('movies'));
     }
 
     /**

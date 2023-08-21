@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DirectorController;
+use App\Http\Controllers\MovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,7 @@ Route::post('articles/{article}/addtag', [ArticleController::class, 'joinTag'])-
 Route::resource('tags', TagController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('directors', DirectorController::class);
+Route::resource('movies', MovieController::class);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');
 Route::post('roles/{role}/adduser', [RoleController::class, 'joinUser'])->name('joinuser');
 
