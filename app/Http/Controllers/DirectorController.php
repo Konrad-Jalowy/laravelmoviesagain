@@ -14,7 +14,8 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $directors = Director::withCount('movies')->get();
+        return view('director.showall', compact('directors'));
     }
 
     /**
