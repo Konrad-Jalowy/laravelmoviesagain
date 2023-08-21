@@ -57,7 +57,8 @@ class DirectorController extends Controller
      */
     public function show(Director $director)
     {
-        return "not implemented";
+        $director->load('movies');
+        return view('director.showone', compact('director'));
     }
 
     /**
