@@ -14,7 +14,7 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -24,7 +24,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -35,7 +35,7 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -46,7 +46,7 @@ class DirectorController extends Controller
      */
     public function show(Director $director)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -57,7 +57,7 @@ class DirectorController extends Controller
      */
     public function edit(Director $director)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -69,7 +69,7 @@ class DirectorController extends Controller
      */
     public function update(Request $request, Director $director)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -80,6 +80,6 @@ class DirectorController extends Controller
      */
     public function destroy(Director $director)
     {
-        //
+        return "not implemented";
     }
 }

@@ -14,7 +14,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -24,7 +24,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -35,7 +35,7 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -46,7 +46,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -57,7 +57,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -69,7 +69,7 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        return "not implemented";
     }
 
     /**
@@ -80,6 +80,6 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        return "not implemented";
     }
 }
