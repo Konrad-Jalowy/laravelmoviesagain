@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $categories = Category::withCount('movies')->get();
+        return view('category.showall', compact('categories'));
     }
 
     /**
