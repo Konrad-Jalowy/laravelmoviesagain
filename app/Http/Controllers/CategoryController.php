@@ -64,7 +64,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return "not implemented";
+        return view('category.editform', ['category' => $category]);
     }
 
     /**
@@ -76,7 +76,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:categories|max:255',
+        ]);
+        $category->name =  $validated['name'];
+        $category->save();
+        return redirect()->route('categories.index');
     }
 
     /**
