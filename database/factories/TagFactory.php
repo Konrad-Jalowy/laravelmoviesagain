@@ -14,10 +14,11 @@ class TagFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    public static $tags = array("News", "Shorts", "Long", "Review", "Ranking", "Trailers", "Rant");
     public function definition()
     {
         return [
-            //
+            'name' => array_pop(self::$tags),
         ];
     }
 }
