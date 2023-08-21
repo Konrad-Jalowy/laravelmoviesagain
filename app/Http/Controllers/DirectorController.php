@@ -80,7 +80,16 @@ class DirectorController extends Controller
      */
     public function update(Request $request, Director $director)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:directors|max:255',
+            'bio' => 'required',
+            'date_of_birth' => 'required'
+        ]);
+        $director->name = $validated['name'];
+        $director->bio = $validated['bio'];
+        $director->date_of_birth = $validated['date_of_birth'];
+        $director->save();
+        return redirect()->route('directors.index');
     }
 
     /**
