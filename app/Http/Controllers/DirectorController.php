@@ -81,6 +81,7 @@ class DirectorController extends Controller
      */
     public function destroy(Director $director)
     {
-        return "not implemented";
+        $director->delete();
+        return redirect()->route('directors.index');
     }
 }

@@ -81,6 +81,7 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        return "not implemented";
+        $movie->delete();
+        return redirect()->route('movies.index');
     }
 }
