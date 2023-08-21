@@ -97,4 +97,5 @@ class TagController extends Controller
         $tag->delete();
         return redirect()->route('tags.index');
     }
+    
 }
