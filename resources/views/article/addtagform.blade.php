@@ -7,7 +7,7 @@
             <h1>{{$article->title}}</h1>
           <form action="#" method="POST">
             @csrf
-            <select name="user" id="user">
+            <select name="tag" id="tag">
                 @foreach ( $tags as $tag )
                     <option value="{{$tag->id}}">{{$tag->name}}</option>
                 @endforeach

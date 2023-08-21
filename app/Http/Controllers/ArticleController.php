@@ -106,6 +106,11 @@ class ArticleController extends Controller
     }
 
     public function joinTag(Request $request, Article $article) {
-        return "not implemented";
+        $validated = $request->validate([
+            'tag' => 'required',
+        ]);
+        $tag = Tag::find($validated['tag']);
+        $article->tags()->syncWithoutDetaching([$tag->id]);
+        return redirect()->route('articles.index');
     }
 }
