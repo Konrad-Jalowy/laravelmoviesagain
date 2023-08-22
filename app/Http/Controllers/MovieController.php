@@ -103,6 +103,9 @@ class MovieController extends Controller
         $movie->save();
         $movie->director()->associate($director);
         $movie->save();
+        if($request->has('delcats')){
+            $movie->categories()->sync([]);
+        }
         $movie->categories()->syncWithoutDetaching([$category->id]);
         return redirect()->route('movies.index');
     }

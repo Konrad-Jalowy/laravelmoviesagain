@@ -52,6 +52,9 @@
                 @endforeach
             </select>
             <br>
+            <input type="checkbox" id="delcats" name="delcats">
+            <label for="vehicle1">Delete previous categories</label><br>
+            <br>
             <input type="submit" value="Update movie">
           </form>
         </div>
