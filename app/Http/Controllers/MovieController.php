@@ -64,7 +64,8 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        return "not implemented";
+        $movie->load(['categories', 'director']);
+        return view('movie.showone', compact('movie'));
     }
 
     /**

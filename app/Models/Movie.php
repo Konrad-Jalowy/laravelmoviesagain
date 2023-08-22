@@ -11,7 +11,7 @@ class Movie extends Model
 
     public function director()
     {
-        return $this->belongsTo(Movie::class);
+        return $this->belongsTo(Director::class);
     }
 
     public function categories() {
