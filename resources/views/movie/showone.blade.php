@@ -7,7 +7,8 @@
     <p>Length: {{$movie->length}}</p>
     <p>Review: {{$movie->review}}</p>
     <p>Date of publishing: {{$movie->date_of_publishing}}</p>
-    <p>Directed by: {{$movie->director->name}}</p>
+    <p>Directed by: <a href="{{route('directors.show',$movie->director->id)}}">{{$movie->director->name}}</a>
+    </p>
     <p>Categories</p>
     <ul>
         @forelse ($movie->categories as $category )
