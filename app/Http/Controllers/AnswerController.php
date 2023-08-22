@@ -80,6 +80,7 @@ class AnswerController extends Controller
      */
     public function destroy(Answer $answer)
     {
-        return "not implemented";
+        $answer->delete();
+        return redirect('/');
     }
 }
