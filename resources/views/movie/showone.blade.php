@@ -19,5 +19,6 @@
         @endforelse
     </ul>
     <a href="{{route('movies.edit', $movie->id)}}">Edit Movie</a>
+    <a href="{{route('movies.index')}}">All movies</a>
 </div>
 @endsection
