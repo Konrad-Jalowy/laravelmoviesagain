@@ -18,5 +18,6 @@
             <li>No categories added!</li>
         @endforelse
     </ul>
+    <a href="{{route('movies.edit', $movie->id)}}">Edit Movie</a>
 </div>
 @endsection
