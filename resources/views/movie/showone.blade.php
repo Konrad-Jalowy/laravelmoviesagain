@@ -11,7 +11,8 @@
     <p>Categories</p>
     <ul>
         @forelse ($movie->categories as $category )
-            <li>{{$category->name}}</li>
+            <li> <a href="{{route('categories.show', $category->id)}}">{{$category->name}}</a>
+            </li>
         @empty
             <li>No categories added!</li>
         @endforelse
