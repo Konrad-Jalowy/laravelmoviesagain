@@ -25,7 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('movie.createform');
     }
 
     /**

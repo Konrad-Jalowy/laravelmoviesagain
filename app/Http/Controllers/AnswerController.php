@@ -24,7 +24,7 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('answer.createform');
     }
 
     /**
