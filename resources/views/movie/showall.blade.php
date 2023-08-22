@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <a href="{{route('movies.create')}}">Add movie</a>
     <p>Movies:</p>
     <ul>
     @forelse ($movies as $movie )
