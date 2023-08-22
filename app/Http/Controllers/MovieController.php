@@ -92,7 +92,19 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        return "not implemented";
+        $director = Director::findOrFail($request['director']);
+        $category = Category::findOrFail($request['category']);
+        $movie->title= $request['title'];
+        $movie->director_id = $request['director'];
+        $movie->review = $request['review'];
+        $movie->date_of_publishing = $request['date_of_publishing'];
+        $movie->movie_length = $request['movie_length'];
+        $movie->grade = $request['grade'];
+        $movie->save();
+        $movie->director()->associate($director);
+        $movie->save();
+        $movie->categories()->syncWithoutDetaching([$category->id]);
+        return redirect()->route('movies.index');
     }
 
     /**
