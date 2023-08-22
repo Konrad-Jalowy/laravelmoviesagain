@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Category;
+use App\Models\Director;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -25,7 +27,9 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('movie.createform');
+        $directors = Director::all();
+        $categories = Category::all();
+        return view('movie.createform', compact('directors', 'categories'));
     }
 
     /**
