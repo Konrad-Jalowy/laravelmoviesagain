@@ -76,7 +76,8 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        return "not implemented";
+        $movie->load(['categories', 'director']);
+        return view('movie.editform', compact('movie'));
     }
 
     /**
