@@ -76,8 +76,11 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
+        $directors = Director::all();
+        $categories = Category::all();
         $movie->load(['categories', 'director']);
-        return view('movie.editform', compact('movie'));
+        $first_cat = $movie->categories()->first();
+        return view('movie.editform', compact('movie', 'categories', 'directors', 'first_cat'));
     }
 
     /**
