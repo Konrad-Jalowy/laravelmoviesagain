@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="container">
-    <p>Directors:</p>
+    <p>Movies:</p>
     <ul>
     @forelse ($movies as $movie )
-       <li><strong>{{$movie->title}}</strong></li>
+       <li>
+       <a href="{{route('movies.show', $movie->id)}}"><strong>{{$movie->title}}</strong></a> 
+       </li>
     @empty
         <li>No movies yet!</li>
     @endforelse
