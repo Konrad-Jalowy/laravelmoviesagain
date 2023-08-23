@@ -48,6 +48,21 @@
                                 <li><a class="dropdown-item" href="{{route('categories.create')}}">Add category</a></li>
                             </ul>
                             </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Articles
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Articles</a></li>
+                                <li><a class="dropdown-item" href="#">Tags</a></li>
+                                <li><a class="dropdown-item" href="#">Latest</a></li>
+                                <li><a class="dropdown-item" href="#">Most viewed</a></li>
+                                <li><a class="dropdown-item" href="#">Most answered</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Add article</a></li>
+                                <li><a class="dropdown-item" href="#">Add tag</a></li>
+                            </ul>
+                            </li>
 
                     </ul>
 
