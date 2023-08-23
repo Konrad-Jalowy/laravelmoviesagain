@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Tag;
 use App\Models\Answer;
+use Illuminate\Support\Carbon;
 
 class ArticleController extends Controller
 {
@@ -25,6 +26,9 @@ class ArticleController extends Controller
             switch ($filter) {
                 case 'noanswer':
                     $articles = Article::doesntHave('answers')->get();
+                    break;
+                case 'today':
+                    $articles = Article::whereDate('created_at',  Carbon::today())->get();
                     break;
                 default:
                     $articles = Article::all();

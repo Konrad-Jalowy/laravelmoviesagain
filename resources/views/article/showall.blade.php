@@ -14,6 +14,9 @@
                     @case('noanswer')
                     <li>Currently no unanswered articles!</li>
                         @break
+                    @case('today')
+                    <li>No articles added today!</li>
+                        @break
                     @default
                     <li>No articles yet!</li>    
                 @endswitch
