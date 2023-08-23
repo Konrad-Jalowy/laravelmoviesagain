@@ -36,10 +36,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{route('movies.index')}}">Movies</a></li>
-                                <li><a class="dropdown-item" href="#">Best movies</a></li>
-                                <li><a class="dropdown-item" href="#">Worst movies</a></li>
-                                <li><a class="dropdown-item" href="#">Longest movies</a></li>
-                                <li><a class="dropdown-item" href="#">Shortest movies</a></li>
+                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'best'])}}">Best movies</a></li>
+                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'worst'])}}">Worst movies</a></li>
+                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'longest'])}}">Longest movies</a></li>
+                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'shortest'])}}">Shortest movies</a></li>
                                 <li><a class="dropdown-item" href="#">Oldest movies:</a></li>
                                 <li><a class="dropdown-item" href="#">Newest movies:</a></li>
                                 <li><a class="dropdown-item" href="#">Categories</a></li>

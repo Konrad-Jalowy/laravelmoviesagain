@@ -14,9 +14,23 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $movies = Movie::all();
+        $filter = $request->query('filter', null);
+        if(is_null($filter)) {
+            $movies = Movie::all();
+        }
+        else {
+            switch ($filter) {
+                case 'best':
+                    $movies = Movie::orderBy('grade', 'desc')->get();
+                    break;
+                case 'worst':
+                    $movies = Movie::orderBy('grade', 'asc')->get();
+                    break;
+            }
+        }
+       
         return view('movie.showall', compact('movies'));
     }
 
