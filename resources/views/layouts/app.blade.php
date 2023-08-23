@@ -58,6 +58,7 @@
                                 <li><a class="dropdown-item" href="#">Latest</a></li>
                                 <li><a class="dropdown-item" href="#">Most viewed</a></li>
                                 <li><a class="dropdown-item" href="#">Most answered</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'noanswer'])}}">Never answered</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{route('articles.create')}}">Add article</a></li>
                                 <li><a class="dropdown-item" href="{{route('tags.create')}}">Add tag</a></li>
@@ -71,7 +72,7 @@
                                 <li><a class="dropdown-item" href="{{route('directors.index')}}">Directors</a></li>
                                 <li><a class="dropdown-item" href="#">Actors</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Add director</a></li>
+                                <li><a class="dropdown-item" href="{{route('directors.create')}}">Add director</a></li>
                                 <li><a class="dropdown-item" href="#">Add actor</a></li>
                             </ul>
                             </li>

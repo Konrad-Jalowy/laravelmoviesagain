@@ -15,9 +15,22 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::all();
+        $filter = $request->query('filter', null);
+        if(is_null($filter)) {
+            $articles = Article::all();
+        }
+        else {
+            switch ($filter) {
+                case 'noanswer':
+                    $articles = Article::doesntHave('answers')->get();
+                    break;
+                default:
+                    $articles = Article::all();
+                    break;
+            }
+        }
         return view('article.showall', compact('articles'));
     }
 
