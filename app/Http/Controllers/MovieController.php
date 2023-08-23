@@ -40,6 +40,9 @@ class MovieController extends Controller
                 case 'newest':
                     $movies = Movie::orderBy('date_of_publishing', 'desc')->get();
                     break;
+                default:
+                    $movies = Movie::all();
+                    break;
             }
         }
        
