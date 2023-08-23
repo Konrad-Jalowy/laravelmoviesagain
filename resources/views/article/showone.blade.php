@@ -8,5 +8,14 @@
     <p>Content: {{$article->content}}</p>
     <a href="{{route('articles.edit', $article->id)}}">Edit</a>
     <a href="{{route('articles.destroy', $article->id)}}">Delete</a>
+    <a href="{{route('answercreate', $article->id)}}">Add answer</a>
+    <p>Answers:</p>
+    <ul>
+        @forelse ($article->answers as $answer )
+            <li>{{$answer->content}} <small>{{$answer->user->name}}</small></li>
+        @empty
+            <li>No answers yet!</li>
+        @endforelse
+    </ul>
 </div>
 @endsection
