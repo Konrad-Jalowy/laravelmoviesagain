@@ -57,8 +57,8 @@
                                 <li><a class="dropdown-item" href="{{route('tags.index')}}">Tags</a></li>
                                 <li><a class="dropdown-item" href="#">Latest</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'today'])}}">Today</a></li>
-                                <li><a class="dropdown-item" href="#">Most viewed</a></li>
-                                <li><a class="dropdown-item" href="#">Most answered</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'mostanswers'])}}">Most answered</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'leastanswers'])}}">Least answered</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'noanswer'])}}">Never answered</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{route('articles.create')}}">Add article</a></li>

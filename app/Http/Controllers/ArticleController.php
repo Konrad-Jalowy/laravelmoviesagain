@@ -28,7 +28,13 @@ class ArticleController extends Controller
                     $articles = Article::doesntHave('answers')->get();
                     break;
                 case 'today':
-                    $articles = Article::whereDate('created_at',  Carbon::today())->get();
+                    $articles = Article::whereDate('created_at', '=',  Carbon::today())->get();
+                    break;
+                case 'mostanswers':
+                    $articles = Article::has('answers')->withCount('answers')->orderBy('answers_count', 'desc')->get();
+                    break;
+                case 'leastanswers':
+                    $articles = Article::has('answers')->withCount('answers')->orderBy('answers_count', 'asc')->get();
                     break;
                 default:
                     $articles = Article::all();
