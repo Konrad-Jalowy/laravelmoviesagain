@@ -30,6 +30,10 @@ class ArticleController extends Controller
         return view('article.createform');
     }
 
+    public function createAnswer(Article $article) {
+        return view('article.answerform', ['article' => $article]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
