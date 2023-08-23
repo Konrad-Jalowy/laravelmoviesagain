@@ -30,6 +30,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Movie
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{route('movies.index')}}">Movies</a></li>
+                                <li><a class="dropdown-item" href="#">Best movies</a></li>
+                                <li><a class="dropdown-item" href="#">Worst movies</a></li>
+                                <li><a class="dropdown-item" href="#">Longest movies</a></li>
+                                <li><a class="dropdown-item" href="#">Shortest movies</a></li>
+                                <li><a class="dropdown-item" href="#">Oldest movies:</a></li>
+                                <li><a class="dropdown-item" href="#">Newest movies:</a></li>
+                                <li><a class="dropdown-item" href="#">Categories</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{route('movies.create')}}">Add movie</a></li>
+                                <li><a class="dropdown-item" href="{{route('categories.create')}}">Add category</a></li>
+                            </ul>
+                            </li>
 
                     </ul>
 
