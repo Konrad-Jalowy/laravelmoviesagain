@@ -28,6 +28,18 @@ class MovieController extends Controller
                 case 'worst':
                     $movies = Movie::orderBy('grade', 'asc')->get();
                     break;
+                case 'longest':
+                    $movies = Movie::orderBy('movie_length', 'desc')->get();
+                    break;
+                case 'shortest':
+                    $movies = Movie::orderBy('movie_length', 'asc')->get();
+                    break;
+                case 'oldest':
+                    $movies = Movie::orderBy('date_of_publishing', 'asc')->get();
+                    break;
+                case 'newest':
+                    $movies = Movie::orderBy('date_of_publishing', 'desc')->get();
+                    break;
             }
         }
        
