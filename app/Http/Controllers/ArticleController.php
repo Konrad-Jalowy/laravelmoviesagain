@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\Answer;
 
 class ArticleController extends Controller
 {
@@ -49,6 +50,17 @@ class ArticleController extends Controller
         $article->lead = $request['lead'];
         $article->content = $request['content'];
         $article->save();
+        return redirect()->route('articles.index');
+    }
+
+    public function storeAnswer(Request $request, Article $article)
+    {
+        $user = Auth::user();
+        $answer = new Answer();
+        $answer->content = $request['content'];
+        $answer->article_id = $article->id;
+        $answer->user_id = $user->id;
+        $answer->save();
         return redirect()->route('articles.index');
     }
 

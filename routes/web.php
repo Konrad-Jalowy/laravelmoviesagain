@@ -30,6 +30,7 @@ Route::resource('articles', ArticleController::class);
 Route::get('articles/{article}/addtag', [ArticleController::class, 'addTag'])->name('addtag');
 Route::post('articles/{article}/addtag', [ArticleController::class, 'joinTag'])->name('jointag');
 Route::get('articles/{article}/createanswer', [ArticleController::class, 'createAnswer'])->name('answercreate');
+Route::post('articles/{article}/createanswer', [ArticleController::class, 'storeAnswer'])->name('answerstore');
 Route::resource('tags', TagController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('directors', DirectorController::class);

@@ -8,7 +8,8 @@
     <p>Content: {{$article->content}}</p>
     <a href="{{route('articles.edit', $article->id)}}">Edit</a>
     <a href="{{route('articles.destroy', $article->id)}}">Delete</a>
-    <form action="">
+    <form action="{{route('answerstore', $article->id)}}" method="POST">
+        @csrf
         <label for="content">Your answer:</label><br>
         <textarea name="content" id="content" cols="30" rows="10"></textarea>
         <br>
