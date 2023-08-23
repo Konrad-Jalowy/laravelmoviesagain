@@ -63,6 +63,18 @@
                                 <li><a class="dropdown-item" href="#">Add tag</a></li>
                             </ul>
                             </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                People
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Directors</a></li>
+                                <li><a class="dropdown-item" href="#">Actors</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Add director</a></li>
+                                <li><a class="dropdown-item" href="#">Add actor</a></li>
+                            </ul>
+                            </li>
 
                     </ul>
 
