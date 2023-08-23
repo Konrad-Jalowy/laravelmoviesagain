@@ -53,14 +53,14 @@
                                 Articles
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Articles</a></li>
-                                <li><a class="dropdown-item" href="#">Tags</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.index')}}">Articles</a></li>
+                                <li><a class="dropdown-item" href="{{route('tags.index')}}">Tags</a></li>
                                 <li><a class="dropdown-item" href="#">Latest</a></li>
                                 <li><a class="dropdown-item" href="#">Most viewed</a></li>
                                 <li><a class="dropdown-item" href="#">Most answered</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Add article</a></li>
-                                <li><a class="dropdown-item" href="#">Add tag</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.create')}}">Add article</a></li>
+                                <li><a class="dropdown-item" href="{{route('tags.create')}}">Add tag</a></li>
                             </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -68,7 +68,7 @@
                                 People
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Directors</a></li>
+                                <li><a class="dropdown-item" href="{{route('directors.index')}}">Directors</a></li>
                                 <li><a class="dropdown-item" href="#">Actors</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Add director</a></li>
