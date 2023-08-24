@@ -77,6 +77,7 @@
                                 <li><a class="dropdown-item" href="#">Add actor</a></li>
                             </ul>
                             </li>
+                            @auth
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin
@@ -86,6 +87,9 @@
                                 <li><a class="dropdown-item" href="{{route('roles.create')}}">Create Role</a></li>
                             </ul>
                             </li>
+                                
+                            @endauth
+                            
 
                     </ul>
 
