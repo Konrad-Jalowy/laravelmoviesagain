@@ -77,7 +77,10 @@
                                 <li><a class="dropdown-item" href="#">Add actor</a></li>
                             </ul>
                             </li>
-                            @auth
+                     
+                            @if (Auth::user() && Auth::user()->is_admin())
+                                
+                            
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin
@@ -88,7 +91,8 @@
                             </ul>
                             </li>
                                 
-                            @endauth
+                            @endif
+                         
                             
 
                     </ul>
