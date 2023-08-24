@@ -11,12 +11,12 @@
         </div>
     </div>
     <p>Role: <strong>{{$role->name}}</strong></p>
-    <p>Users:</p>
+    <p>Members:</p>
     <ul>
     @forelse ($role->users as $user )
         <li>{{$user->name}}</li>
     @empty
-        <li>No users!</li>
+        <li>No members!</li>
     @endforelse
     </ul>
 </div>
