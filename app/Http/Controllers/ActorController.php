@@ -93,6 +93,7 @@ class ActorController extends Controller
      */
     public function destroy(Actor $actor)
     {
-        return "not implemented";
+        $actor->delete();
+        return redirect()->route('actors.index');
     }
 }
