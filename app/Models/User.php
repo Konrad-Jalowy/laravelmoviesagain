@@ -53,4 +53,9 @@ class User extends Authenticatable
     public function has_role($role_id) {
         return $this->roles()->where('role_id', $role_id)->exists();
     }
+
+    public function has_role_by_name($rolename) {
+        $role = Role::where('name', '=', $rolename)->first();
+        return $this->has_role($role->id);
+    }
 }
