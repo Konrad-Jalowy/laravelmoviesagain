@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('actors', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->date('date_of_birth');
+            $table->text('bio');
         });
     }
 
