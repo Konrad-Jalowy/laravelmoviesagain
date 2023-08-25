@@ -24,7 +24,7 @@ class ActorController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('actor.createform');
     }
 
     /**
