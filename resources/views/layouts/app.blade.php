@@ -89,6 +89,7 @@
                                 <li><a class="dropdown-item" href="{{route('roles.index')}}">Roles</a></li>
                                 <li><a class="dropdown-item" href="{{route('roles.create')}}">Create Role</a></li>
                                 <li><a class="dropdown-item" href="{{route('selectRole')}}">Grant membership</a></li>
+                                <li><a class="dropdown-item" href="{{route('selectSplit')}}">Remove membership</a></li>
                             </ul>
                             </li>
                             @endif
