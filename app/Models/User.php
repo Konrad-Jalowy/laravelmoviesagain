@@ -54,6 +54,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class)->wherePivot('name', 'Moderator');
     }
 
+    public function is_writer() {
+        return $this->belongsToMany(Role::class)->wherePivot('name', 'Writer');
+    }
+
     
 
     public function has_role($role_id) {
