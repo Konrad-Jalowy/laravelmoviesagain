@@ -100,6 +100,17 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                    <form class="d-flex">
+                        <select name="category" id="category">
+                            <option value="all" selected>All</option>
+                            <option value="movies">Movies</option>
+                            <option value="directors">Directors</option>
+                            <option value="articles">Articles</option>
+                            <option value="actors">Actors</option>
+                        </select>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
