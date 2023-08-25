@@ -26,7 +26,7 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    public function has_tag($tag) {
-        return $this->tags()->where('tag_id', $tag->id)->exists();
+    public function has_tag($tag_id) {
+        return $this->tags()->where('tag_id', $tag_id)->exists();
     }
 }

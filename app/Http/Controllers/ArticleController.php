@@ -96,8 +96,15 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->load(['user', 'answers', 'tags']);
-        
+        $rantTag = Tag::where('name', '=', 'Rant')->first();
+        if($article->has_tag($rantTag->id))
+        {
+            return "hello world";
+        }
+        else {
             return view('article.showone', compact('article'));
+        }
+            
         
         
     }
