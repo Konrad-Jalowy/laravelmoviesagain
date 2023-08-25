@@ -121,7 +121,7 @@ class RoleController extends Controller
     public function selectUserAndRole(){
         $users = User::all();
         $roles = Role::all();
-        return "not implemented";
+        return view('role.jointwoform', ['roles' => $roles, 'users' => $users]);
     }
 
     public function joinUserAndRole(Request $request)

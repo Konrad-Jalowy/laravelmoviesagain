@@ -23,7 +23,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
+Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('roles', RoleController::class);
 Route::resource('articles', ArticleController::class);
@@ -37,6 +38,5 @@ Route::resource('directors', DirectorController::class);
 Route::resource('movies', MovieController::class);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');
 Route::post('roles/{role}/adduser', [RoleController::class, 'joinUser'])->name('joinuser');
-Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
-Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
+
 
