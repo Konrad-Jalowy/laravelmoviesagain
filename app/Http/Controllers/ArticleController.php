@@ -96,13 +96,8 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->load(['user', 'answers', 'tags']);
-        if($article->has_tag_by_name('Rant'))
-        {
-            return "hello world";
-        }
-        else {
-            return view('article.showone', compact('article'));
-        }
+        return view('article.showone', compact('article'));
+        
             
         
         
