@@ -37,4 +37,6 @@ Route::resource('directors', DirectorController::class);
 Route::resource('movies', MovieController::class);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');
 Route::post('roles/{role}/adduser', [RoleController::class, 'joinUser'])->name('joinuser');
+Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
+Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 

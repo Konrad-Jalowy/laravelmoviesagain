@@ -118,4 +118,15 @@ class RoleController extends Controller
         return redirect()->route('roles.index');
     }
 
+    public function selectUserAndRole(){
+        $users = User::all();
+        $roles = Role::all();
+        return "not implemented";
+    }
+
+    public function joinUserAndRole(Request $request)
+    {
+        return "not implemented";
+    }
+
 }
