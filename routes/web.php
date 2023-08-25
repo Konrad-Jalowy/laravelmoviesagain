@@ -7,6 +7,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ActorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +39,9 @@ Route::resource('tags', TagController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('directors', DirectorController::class);
 Route::resource('movies', MovieController::class);
+Route::resource('actors', ActorController::class);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');
 Route::post('roles/{role}/adduser', [RoleController::class, 'joinUser'])->name('joinuser');
+
 
 
