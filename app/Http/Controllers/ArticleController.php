@@ -95,8 +95,11 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        $article->load(['user', 'answers']);
-        return view('article.showone', compact('article'));
+        $article->load(['user', 'answers', 'tags']);
+        
+            return view('article.showone', compact('article'));
+        
+        
     }
 
     /**

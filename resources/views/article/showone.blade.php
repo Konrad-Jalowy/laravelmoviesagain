@@ -9,6 +9,9 @@
     <a href="{{route('articles.edit', $article->id)}}">Edit</a>
     <a href="{{route('articles.destroy', $article->id)}}">Delete</a>
     <a href="{{route('answercreate', $article->id)}}">Add answer</a>
+    @if ($article->has_tag('rant'))
+        <h1>This article belongs to rant hashtag!</h1>
+    @endif
     <p>Answers:</p>
     <ul>
         @forelse ($article->answers as $answer )
