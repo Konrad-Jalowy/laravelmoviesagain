@@ -29,4 +29,9 @@ class Article extends Model
     public function has_tag($tag_id) {
         return $this->tags()->where('tag_id', $tag_id)->exists();
     }
+
+    public function has_tag_by_name($tagname) {
+        $tag = Tag::where('name', '=', $tagname)->first();
+        return $this->has_tag($tag->id);
+    }
 }
