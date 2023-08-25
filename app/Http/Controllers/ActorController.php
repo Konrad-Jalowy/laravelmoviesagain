@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Actor;
 use Illuminate\Http\Request;
 
+
 class ActorController extends Controller
 {
     /**
@@ -35,7 +36,17 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|unique:actors|max:255',
+            'bio' => 'required',
+            'date_of_birth' => 'required'
+        ]);
+        $newActor = new Actor();
+        $newActor->name = $validated['name'];
+        $newActor->bio = $validated['bio'];
+        $newActor->date_of_birth = $validated['date_of_birth'];
+        $newActor->save();
+        return redirect()->route('actors.index');
     }
 
     /**
