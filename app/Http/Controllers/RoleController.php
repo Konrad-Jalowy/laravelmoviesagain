@@ -129,4 +129,15 @@ class RoleController extends Controller
         return "not implemented";
     }
 
+    public function selectAndRemove(){
+        $users = User::all();
+        $roles = Role::all();
+        return view('role.splittwoform', ['roles' => $roles, 'users' => $users]);
+    }
+
+    public function splitUserAndRole(Request $request)
+    {
+        return "not implemented";
+    }
+
 }

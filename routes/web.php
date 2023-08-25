@@ -25,6 +25,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
 Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
+Route::get('roles/split', [RoleController::class, 'selectAndRemove'])->name('selectSplit');
+Route::post('roles/split', [RoleController::class, 'joinUserAndRole'])->name('splitRole');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('roles', RoleController::class);
 Route::resource('articles', ArticleController::class);
