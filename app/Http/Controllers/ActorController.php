@@ -14,8 +14,10 @@ class ActorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return "not implemented";
+        $actors = Actor::withCount('movies')->get();
+        return view('actor.showall', compact('actors'));
     }
 
     /**
