@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Article extends Model
 {
@@ -38,5 +39,15 @@ class Article extends Model
     public function incrementViewsCount(){
         $this->viewsCount++;
         return $this->save();
+    }
+
+    public function scopeNeverSeen(Builder $query)
+    {
+        $query->where('viewsCount', 0);
+    }
+    
+    public function scopeSeen(Builder $query)
+    {
+        $query->where('viewsCount', ">", 0);
     }
 }
