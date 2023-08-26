@@ -153,4 +153,10 @@ class RoleController extends Controller
 
     }
 
+    public function managePrivlidges() {
+        $users = User::all();
+        $roles = Role::all();
+        return view('role.manageprivlidges', ['roles' => $roles, 'users' => $users]);
+    }
+
 }

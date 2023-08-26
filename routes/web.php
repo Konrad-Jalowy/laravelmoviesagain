@@ -27,6 +27,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::post('/search', SearchController::class )->name('search');
 Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
+Route::get('roles/manage', [RoleController::class, 'managePrivlidges'])->name('roles.manage');
 Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 Route::get('roles/split', [RoleController::class, 'selectAndRemove'])->name('selectSplit');
 Route::post('roles/split', [RoleController::class, 'splitUserAndRole'])->name('splitRole');
