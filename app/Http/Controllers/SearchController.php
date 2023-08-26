@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Director;
 use App\Models\Actor;
+use App\Models\Movie;
+use App\Models\Article;
 
 class SearchController extends Controller
 {
@@ -35,6 +37,13 @@ class SearchController extends Controller
                 });
                 return view('search.searchactor', ['actors' => $actors->withCount('movies')->get()]);
                 break;
+            case 'movies':
+                    $movies = Movie::query();
+                    $movies->when(request('search'), function ($query) {
+                        $query->where('title', 'like', '%' . request('search') . '%');
+                    });
+                    return view('search.searchmovie', ['movies' => $movies->get()]);
+                    break;
         }
         
         return $validated['category'];
