@@ -51,6 +51,30 @@ class SearchController extends Controller
                         });
                         return view('search.searcharticle', ['articles' => $articles->get()]);
                         break;
+            default:
+            $directors = Director::query();
+                $directors->when(request('search'), function ($query) {
+                    $query->where('name', 'like', '%' . request('search') . '%');
+                });
+            $actors = Actor::query();
+                $actors->when(request('search'), function ($query) {
+                    $query->where('name', 'like', '%' . request('search') . '%');
+                });
+            $movies = Movie::query();
+                $movies->when(request('search'), function ($query) {
+                    $query->where('title', 'like', '%' . request('search') . '%');
+                });
+            $articles = Article::query();
+                $articles->when(request('search'), function ($query) {
+                    $query->where('title', 'like', '%' . request('search') . '%');
+                });
+            return view('search.searchall', ['directors' => $directors->withCount('movies')->get(),
+            'actors' => $actors->withCount('movies')->get(),
+            'movies' => $movies->get(),
+            'articles' => $articles->get()
+        ]);
+        break;
+
         }
         
         return $validated['category'];
