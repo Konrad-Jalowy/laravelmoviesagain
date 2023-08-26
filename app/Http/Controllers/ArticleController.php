@@ -39,9 +39,12 @@ class ArticleController extends Controller
                 case 'neverseen':
                 $articles = Article::neverSeen()->get();
                 break;
+                case 'latest':
+                $articles = Article::orderBy('created_at', 'desc')->get();
+                break;
                 default:
-                    $articles = Article::all();
-                    break;
+                $articles = Article::all();
+                break;
             }
         }
         return view('article.showall', compact('articles'));

@@ -55,7 +55,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{route('articles.index')}}">Articles</a></li>
                                 <li><a class="dropdown-item" href="{{route('tags.index')}}">Tags</a></li>
-                                <li><a class="dropdown-item" href="#">Latest</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'latest'])}}">Latest</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'today'])}}">Today</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'mostanswers'])}}">Most answered</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'leastanswers'])}}">Least answered</a></li>
