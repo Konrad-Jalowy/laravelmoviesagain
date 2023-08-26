@@ -59,7 +59,8 @@ class ActorController extends Controller
      */
     public function show(Actor $actor)
     {
-        return "not implemented";
+        $actor->load('movies');
+        return view('actor.showone', compact('actor'));
     }
 
     /**
