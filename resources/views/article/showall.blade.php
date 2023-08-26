@@ -17,6 +17,9 @@
                     @case('today')
                     <li>No articles added today!</li>
                         @break
+                    @case('neverseen')
+                    <li>All articles has been viewed at least once!</li>
+                        @break
                     @default
                     <li>No articles yet!</li>    
                 @endswitch
