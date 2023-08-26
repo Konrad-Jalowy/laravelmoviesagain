@@ -159,4 +159,8 @@ class RoleController extends Controller
         return view('role.manageprivlidges', ['roles' => $roles, 'users' => $users]);
     }
 
+    public function setPrivlidges(Request $request) {
+        return "not implemented";
+    }
+
 }
