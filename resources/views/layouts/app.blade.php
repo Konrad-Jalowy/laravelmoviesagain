@@ -60,6 +60,7 @@
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'mostanswers'])}}">Most answered</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'leastanswers'])}}">Least answered</a></li>
                                 <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'noanswer'])}}">Never answered</a></li>
+                                <li><a class="dropdown-item" href="{{route('articles.index', ['filter' => 'neverseen'])}}">Never seen</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{route('articles.create')}}">Add article</a></li>
                                 <li><a class="dropdown-item" href="{{route('tags.create')}}">Add tag</a></li>

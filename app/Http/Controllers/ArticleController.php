@@ -36,6 +36,9 @@ class ArticleController extends Controller
                 case 'leastanswers':
                     $articles = Article::has('answers')->withCount('answers')->orderBy('answers_count', 'asc')->get();
                     break;
+                case 'neverseen':
+                $articles = Article::neverSeen()->get();
+                break;
                 default:
                     $articles = Article::all();
                     break;
