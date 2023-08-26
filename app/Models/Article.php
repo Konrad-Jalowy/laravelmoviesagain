@@ -34,4 +34,9 @@ class Article extends Model
         $tag = Tag::where('name', '=', $tagname)->first();
         return $this->has_tag($tag->id);
     }
+
+    public function incrementViewsCount(){
+        $this->viewsCount++;
+        return $this->save();
+    }
 }
