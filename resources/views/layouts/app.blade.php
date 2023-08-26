@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/helloworld.js'])
 </head>
 <body>
     <div id="app">
@@ -103,7 +103,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                    <form class="d-flex" method="POST" action="{{route('search')}}">
+                    <form class="d-flex" method="POST" action="{{route('search')}}" id="searchForm">
                         @csrf
                         <select  class="form-select" name="category" id="category">
                             <option value="all" selected>All</option>
@@ -112,8 +112,8 @@
                             <option value="articles">Articles</option>
                             <option value="actors">Actors</option>
                         </select>
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchIpt" name="search">
+        <button class="btn btn-outline-success" type="submit" id="searchSubmit">Search</button>
       </form>
                         <!-- Authentication Links -->
                         @guest
@@ -156,5 +156,7 @@
             @yield('content')
         </main>
     </div>
+    @stack('js_after')
+    
 </body>
 </html>
