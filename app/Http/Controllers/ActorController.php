@@ -82,7 +82,16 @@ class ActorController extends Controller
      */
     public function update(Request $request, Actor $actor)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'bio' => 'required',
+            'date_of_birth' => 'required'
+        ]);
+        $actor->name = $validated['name'];
+        $actor->bio = $validated['bio'];
+        $actor->date_of_birth = $validated['date_of_birth'];
+        $actor->save();
+        return redirect()->route('actors.index');
     }
 
     /**

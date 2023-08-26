@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <p>Directors:</p>
+    <p>Actors:</p>
     <ul>
     @forelse ($actors as $actor )
        <li><strong>{{$actor->name}}</strong> <small>Number of movies: {{$actor->movies_count}}</small></li>
