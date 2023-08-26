@@ -40,8 +40,8 @@
                                 <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'worst'])}}">Worst movies</a></li>
                                 <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'longest'])}}">Longest movies</a></li>
                                 <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'shortest'])}}">Shortest movies</a></li>
-                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'oldest'])}}">Oldest movies:</a></li>
-                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'newest'])}}">Newest movies:</a></li>
+                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'oldest'])}}">Oldest movies</a></li>
+                                <li><a class="dropdown-item" href="{{route('movies.index', ['filter' => 'newest'])}}">Newest movies</a></li>
                                 <li><a class="dropdown-item" href="#">Categories</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{route('movies.create')}}">Add movie</a></li>
