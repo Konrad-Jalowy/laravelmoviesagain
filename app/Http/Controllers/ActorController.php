@@ -113,4 +113,14 @@ class ActorController extends Controller
         $actors = Actor::all();
         return view('actor.joinform', ['movies' => $movies, 'actors' => $actors]);
     }
+
+    public function join(Request $request) {
+        $validated = $request->validate([
+            'actor' => 'required',
+            'movie' => 'required',
+        ]);
+        $actor = Actor::find($validated['actor']);
+        $actor->movies()->syncWithoutDetaching([$validated['movie']]);
+        return redirect()->route('actors.index');
+    }
 }

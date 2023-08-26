@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <form action="{{route('joinRole')}}" method="POST">
+          <form action="{{route('joinMovie')}}" method="POST">
             @csrf
             <label for="actor">Actor:</label>
             <select name="actor" id="actor">
