@@ -143,7 +143,14 @@ class RoleController extends Controller
 
     public function splitUserAndRole(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'user' => 'required',
+            'role' => 'required',
+        ]);
+        $user = User::find($validated['user']);
+        $user->roles()->detach([$validated['role']]);
+        return redirect()->route('roles.index');
+
     }
 
 }

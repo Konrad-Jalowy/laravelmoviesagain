@@ -29,7 +29,7 @@ Route::post('/search', SearchController::class )->name('search');
 Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
 Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 Route::get('roles/split', [RoleController::class, 'selectAndRemove'])->name('selectSplit');
-Route::post('roles/split', [RoleController::class, 'joinUserAndRole'])->name('splitRole');
+Route::post('roles/split', [RoleController::class, 'splitUserAndRole'])->name('splitRole');
 Route::get('actors/select', [ActorController::class, 'selectAndJoin'])->name('selectMovie');
 Route::post('actors/select', [ActorController::class, 'join'])->name('joinMovie');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
