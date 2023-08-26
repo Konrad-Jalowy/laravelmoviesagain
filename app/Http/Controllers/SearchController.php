@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Director;
+use App\Models\Actor;
 
 class SearchController extends Controller
 {
@@ -27,8 +28,15 @@ class SearchController extends Controller
                 });
                 return view('search.searchdirector', ['directors' => $directors->withCount('movies')->get()]);
                 break;
+            case 'actors':
+                $actors = Actor::query();
+                $actors->when(request('search'), function ($query) {
+                    $query->where('name', 'like', '%' . request('search') . '%');
+                });
+                return view('search.searchactor', ['actors' => $actors->withCount('movies')->get()]);
+                break;
         }
         
-        return $validated['search'];
+        return $validated['category'];
     }
 }
