@@ -6,18 +6,18 @@
         <div class="col-md-8">
           <form action="{{route('articles.store')}}" method="POST">
             @csrf
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" placeholder="Enter title">
-            <br>
-            <label for="lead">Lead:</label>
-            <br>
-            <textarea name="lead" id="lead" cols="30" rows="10"></textarea>
-            <br>
-            <label for="content">Content:</label>
-            <br>
-            <textarea name="content" id="content" cols="30" rows="10"></textarea>
-            <br>
-            <input type="submit" value="Add">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Enter title" class="form-control">
+    
+            <label for="lead" class="form-label">Lead:</label>
+     
+            <textarea name="lead" id="lead" cols="30" rows="10" class="form-control"></textarea>
+       
+            <label for="content" class="form-label">Content:</label>
+      
+            <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+           
+            <input type="submit" value="Add" class="btn btn-primary mt-2">
           </form>
         </div>
     </div>
