@@ -126,7 +126,13 @@ class RoleController extends Controller
 
     public function joinUserAndRole(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'user' => 'required',
+            'role' => 'required',
+        ]);
+        $user = User::find($validated['user']);
+        $user->roles()->syncWithoutDetaching([$validated['role']]);
+        return redirect()->route('roles.index');
     }
 
     public function selectAndRemove(){
