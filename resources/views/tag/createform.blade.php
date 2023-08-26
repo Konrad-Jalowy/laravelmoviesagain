@@ -6,9 +6,9 @@
         <div class="col-md-8">
           <form action="{{route('tags.store')}}" method="POST">
             @csrf
-            <label for="name">Tag name:</label>
-            <input type="text" name="name" id="name" placeholder="Enter tag">
-            <input type="submit" value="Add tag">
+            <label for="name" class="form-label">Tag name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter tag" class="form-control">
+            <input type="submit" value="Add tag" class="btn btn-primary mt-2">
           </form>
         </div>
     </div>
