@@ -77,6 +77,7 @@
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{route('directors.create')}}">Add director</a></li>
                                 <li><a class="dropdown-item" href="{{route('actors.create')}}">Add actor</a></li>
+                                <li><a class="dropdown-item" href="{{route('selectMovie')}}">Join actor to movie</a></li>
                             </ul>
                             </li>
                      

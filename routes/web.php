@@ -28,6 +28,7 @@ Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('
 Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 Route::get('roles/split', [RoleController::class, 'selectAndRemove'])->name('selectSplit');
 Route::post('roles/split', [RoleController::class, 'joinUserAndRole'])->name('splitRole');
+Route::get('actors/select', [ActorController::class, 'selectAndJoin'])->name('selectMovie');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('roles', RoleController::class);
 Route::resource('articles', ArticleController::class);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Actor;
 use Illuminate\Http\Request;
+use App\Models\Movie;
 
 
 class ActorController extends Controller
@@ -105,5 +106,11 @@ class ActorController extends Controller
     {
         $actor->delete();
         return redirect()->route('actors.index');
+    }
+
+    public function selectAndJoin(){
+        $movies = Movie::all();
+        $actors = Actor::all();
+        return view('actor.joinform', ['movies' => $movies, 'actors' => $actors]);
     }
 }
