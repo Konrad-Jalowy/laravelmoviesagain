@@ -9,6 +9,7 @@ use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::post('/search', SearchController::class )->name('search');
+Route::get('/profile', ProfileController::class )->name('profile');
 Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
 Route::get('roles/manage', [RoleController::class, 'managePrivlidges'])->name('roles.manage');
 Route::post('roles/manage', [RoleController::class, 'setPrivlidges'])->name('roles.set');
