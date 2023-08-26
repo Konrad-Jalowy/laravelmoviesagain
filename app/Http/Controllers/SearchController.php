@@ -44,6 +44,13 @@ class SearchController extends Controller
                     });
                     return view('search.searchmovie', ['movies' => $movies->get()]);
                     break;
+            case 'articles':
+                        $articles = Article::query();
+                        $articles->when(request('search'), function ($query) {
+                            $query->where('title', 'like', '%' . request('search') . '%');
+                        });
+                        return view('search.searcharticle', ['articles' => $articles->get()]);
+                        break;
         }
         
         return $validated['category'];
