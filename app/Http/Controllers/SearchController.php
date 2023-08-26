@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Director;
 
 class SearchController extends Controller
 {
@@ -14,6 +15,20 @@ class SearchController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return "not implemented";
+        $validated = $request->validate([
+            'category' => 'required',
+            'search' => 'required',
+        ]);
+        switch ($validated['category']) {
+            case 'directors':
+                $directors = Director::query();
+                $directors->when(request('search'), function ($query) {
+                    $query->where('name', 'like', '%' . request('search') . '%');
+                });
+                return view('search.searchdirector', ['directors' => $directors->withCount('movies')->get()]);
+                break;
+        }
+        
+        return $validated['search'];
     }
 }
