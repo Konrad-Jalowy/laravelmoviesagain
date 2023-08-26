@@ -42,6 +42,9 @@ class ArticleController extends Controller
                 case 'latest':
                 $articles = Article::orderBy('created_at', 'desc')->get();
                 break;
+                case 'oldest':
+                    $articles = Article::orderBy('created_at', 'asc')->get();
+                    break;
                 default:
                 $articles = Article::all();
                 break;
