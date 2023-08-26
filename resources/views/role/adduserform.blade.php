@@ -6,13 +6,13 @@
         <div class="col-md-8">
           <form action="{{route('joinuser', $role->id)}}" method="POST">
             @csrf
-            <p>Role: {{$role->name}}</p>
-            <select name="user" id="user">
+            <label for="user" class="form-label">Role: {{$role->name}}</label>
+            <select name="user" id="user" class="form-select">
                 @foreach ( $users as $user )
                     <option value="{{$user->id}}">{{$user->name}}</option>
                 @endforeach
             </select>
-            <input type="submit" value="Add Role">
+            <input type="submit" value="Add Role" class="btn btn-primary mt-2">
           </form>
         </div>
     </div>
