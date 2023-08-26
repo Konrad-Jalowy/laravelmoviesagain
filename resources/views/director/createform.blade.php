@@ -6,17 +6,17 @@
         <div class="col-md-8">
           <form action="{{route('directors.store')}}" method="POST">
             @csrf
-            <label for="name">Director name:</label>
-            <input type="text" name="name" id="name" placeholder="Enter name">
-            <br>
-            <label for="date_of_birth">Date of birth:</label>
-            <input type="date" name="date_of_birth" id="date_of_birth">
-            <br>
-            <label for="bio">Bio:</label>
-            <br>
-            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-            <br>
-            <input type="submit" value="Add director">
+            <label for="name" class="form-label">Director name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">
+       
+            <label for="date_of_birth" class="form-label">Date of birth:</label>
+            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control">
+         
+            <label for="bio" class="form-label">Bio:</label>
+        
+            <textarea name="bio" id="bio" cols="30" rows="10" class="form-control"></textarea>
+    
+            <input type="submit" value="Add director" class="btn btn-primary mt-2">
           </form>
         </div>
     </div>
