@@ -70,7 +70,7 @@ class ActorController extends Controller
      */
     public function edit(Actor $actor)
     {
-        return "not implemented";
+        return view('actor.editform', ['actor' => $actor]);
     }
 
     /**
