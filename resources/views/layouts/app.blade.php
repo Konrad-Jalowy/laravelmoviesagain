@@ -103,7 +103,8 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                    <form class="d-flex">
+                    <form class="d-flex" method="POST" action="{{route('search')}}">
+                        @csrf
                         <select  class="form-select" name="category" id="category">
                             <option value="all" selected>All</option>
                             <option value="movies">Movies</option>

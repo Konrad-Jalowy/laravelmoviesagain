@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/search', SearchController::class )->name('search');
+Route::post('/search', SearchController::class )->name('search');
 Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
 Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 Route::get('roles/split', [RoleController::class, 'selectAndRemove'])->name('selectSplit');
