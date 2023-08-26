@@ -6,9 +6,9 @@
         <div class="col-md-8">
           <form action="{{route('roles.store')}}" method="POST">
             @csrf
-            <label for="name">Role name:</label>
-            <input type="text" name="name" id="name" placeholder="Enter role">
-            <input type="submit" value="Add">
+            <label for="name" class="form-label">Role name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter role" class="form-control">
+            <input type="submit" value="Add" class="btn btn-primary mt-2">
           </form>
         </div>
     </div>
