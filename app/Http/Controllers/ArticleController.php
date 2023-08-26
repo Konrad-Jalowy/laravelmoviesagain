@@ -96,6 +96,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->load(['user', 'answers', 'tags']);
+        $article->incrementViewsCount();
         return view('article.showone', compact('article'));
         
             
