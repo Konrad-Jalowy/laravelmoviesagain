@@ -16,6 +16,7 @@
         </p>
     </div>
     @endif
+    <p>Views: {{$article->viewsCount}}</p>
     
     
    
