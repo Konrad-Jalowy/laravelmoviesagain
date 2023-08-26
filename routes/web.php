@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ActorController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/search', SearchController::class )->name('search');
 Route::get('roles/select', [RoleController::class, 'selectUserAndRole'])->name('selectRole');
 Route::post('roles/select', [RoleController::class, 'joinUserAndRole'])->name('joinRole');
 Route::get('roles/split', [RoleController::class, 'selectAndRemove'])->name('selectSplit');
