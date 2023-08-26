@@ -11,7 +11,7 @@
     <a href="{{route('answercreate', $article->id)}}">Add answer</a>
     @if ($article->tags()->exists())
     <div>
-        <p>Tags: @foreach ($article->tags as $tag ) <a href="{{route('tags.show', $tag->id)}}">#{{$tag->name}}</a>  @endforeach
+        <p>Tags: @foreach ($article->tags as $tag ) <a href="{{route('tags.show', $tag->id)}}" class="badge rounded-pill bg-primary">#{{$tag->name}}</a>  @endforeach
             
         </p>
     </div>
