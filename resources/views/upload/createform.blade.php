@@ -10,8 +10,8 @@
             <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">
           
             <div>
-                <label for="file" class="form-label">Choose file to upload:</label>
-                <input type="file" id="file" name="file" class="form-control" />
+                <label for="upload" class="form-label">Choose file to upload:</label>
+                <input type="file" id="file" name="upload" class="form-control" />
   </div>
 
             <input type="submit" value="Add file" class="btn btn-primary mt-2">
