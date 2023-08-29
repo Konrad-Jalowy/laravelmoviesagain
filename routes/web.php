@@ -49,7 +49,7 @@ Route::resource('categories', CategoryController::class);
 Route::resource('directors', DirectorController::class);
 Route::resource('movies', MovieController::class);
 Route::resource('actors', ActorController::class);
-Route::resource('uploads', UploadController::class);
+Route::resource('uploads', UploadController::class)->only(['show', 'store', 'create', 'index']);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');
 Route::post('roles/{role}/adduser', [RoleController::class, 'joinUser'])->name('joinuser');
 
