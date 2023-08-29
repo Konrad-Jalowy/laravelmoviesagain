@@ -65,7 +65,9 @@ class UploadController extends Controller
      */
     public function show(Upload $upload)
     {
-        return "not implemented";
+        $path = $upload->path;
+        
+        return Storage::download($path);
     }
 
     /**
