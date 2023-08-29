@@ -94,6 +94,8 @@
                                 <li><a class="dropdown-item" href="{{route('selectRole')}}">Grant membership</a></li>
                                 <li><a class="dropdown-item" href="{{route('selectSplit')}}">Remove membership</a></li>
                                 <li><a class="dropdown-item" href="{{route('roles.manage')}}">Manage Roles</a></li>
+                                <li><a class="dropdown-item" href="{{route('uploads.index')}}">Uploads</a></li>
+                                <li><a class="dropdown-item" href="{{route('uploads.create')}}">Add upload</a></li>
                             </ul>
                             </li>
                             @endif
