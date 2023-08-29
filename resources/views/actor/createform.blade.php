@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <form action="{{route('actors.store')}}" method="POST">
+          <form action="{{route('actors.store')}}" method="POST" >
             @csrf
             <label for="name" class="form-label">Actor name:</label>
             <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">

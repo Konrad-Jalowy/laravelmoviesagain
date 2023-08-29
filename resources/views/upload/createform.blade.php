@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <form action="{{route('uploads.store')}}" method="POST">
+          <form action="{{route('uploads.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <label for="name" class="form-label">File name:</label>
             <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">
