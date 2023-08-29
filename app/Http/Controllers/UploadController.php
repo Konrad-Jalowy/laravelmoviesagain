@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Upload;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -38,8 +38,13 @@ class UploadController extends Controller
     {
      
         //dd($request->all());
-        dd( $request->hasFile('upload'));
-        return $request->hasFile('file');
+        //dd( $request->hasFile('upload'));
+        if($request->hasFile('upload')) {
+            $path = Storage::putFileAs(
+                'uploads', $request->file('upload'), $request->name . "." . $request->file('upload')->getClientOriginalExtension()
+            );
+        }
+        return "$path";
     }
 
     /**
