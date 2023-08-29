@@ -10,6 +10,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +49,7 @@ Route::resource('categories', CategoryController::class);
 Route::resource('directors', DirectorController::class);
 Route::resource('movies', MovieController::class);
 Route::resource('actors', ActorController::class);
+Route::resource('uploads', UploadController::class);
 Route::get('roles/{role}/adduser', [RoleController::class, 'addUserToRole'])->name('addusertorole');
 Route::post('roles/{role}/adduser', [RoleController::class, 'joinUser'])->name('joinuser');
 
