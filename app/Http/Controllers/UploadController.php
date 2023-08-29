@@ -24,7 +24,7 @@ class UploadController extends Controller
      */
     public function create()
     {
-        return "not implemented";
+        return view('upload.createform');
     }
 
     /**
