@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+
 
 class UploadController extends Controller
 {
@@ -15,7 +17,9 @@ class UploadController extends Controller
      */
     public function index()
     {
-        return "not implemented";
+        $uploads = Upload::all();
+        $uploads->load('user');
+        return view('upload.showall', compact('uploads'));
     }
 
     /**
@@ -44,8 +48,14 @@ class UploadController extends Controller
                 'uploads', $request->file('upload'), $request->name . "." . $request->file('upload')->getClientOriginalExtension()
             );
         }
-        return "$path";
+        $upload = new Upload();
+        $upload->name =  $request->name;
+        $upload->path = $path;
+        $upload->user_id = Auth::user()->id;
+        $upload->save();
+        return redirect()->route('uploads.index');
     }
+    
 
     /**
      * Display the specified resource.
